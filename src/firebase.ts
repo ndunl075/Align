@@ -12,7 +12,7 @@ import { getFirestore, initializeFirestore, memoryLocalCache } from 'firebase/fi
 
 /**
  * Firebase Web SDK via npm (`firebase` package). Same fields as the console snippet, but from `.env.local`
- * as `VITE_FIREBASE_*` so API keys are not committed. See `.env.example` and
+ * as `VITE_FIREBASE_*` so API keys are not committed. See
  * https://firebase.google.com/docs/web/setup — restart `npm run dev` after editing env.
  */
 const measurementId = import.meta.env.VITE_FIREBASE_MEASUREMENT_ID as string | undefined
@@ -33,7 +33,7 @@ export const auth = getAuth(app)
 /**
  * Default: `getFirestore(app)` — same as Firebase quickstart; most reliable.
  * Optional: set VITE_FIRESTORE_MEMORY_INIT=true to use in-memory cache + optional long polling
- * (see VITE_FIRESTORE_LONG_POLLING in `.env.example`) if a tool breaks IndexedDB or WebChannel.
+ * if a tool breaks IndexedDB or WebChannel.
  */
 function initFirestore() {
   const useCustomInit =
@@ -68,7 +68,7 @@ export function getFirebaseSummary() {
 
 export function assertFirebaseConfigured(): string | null {
   if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
-    return 'Firebase env vars are missing. Copy .env.example to .env.local, add your VITE_FIREBASE_* keys, then restart the dev server.'
+    return 'Firebase env vars are missing. Add VITE_FIREBASE_* keys to .env.local (see Firebase Web setup), then restart the dev server.'
   }
   return null
 }

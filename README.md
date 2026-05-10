@@ -20,7 +20,7 @@ Web app for planning events with friends: create a plan, share a link, mark **fr
 
 3. Create a Firebase project, enable **Firestore**, and add a **Web app** to get the config object.
 
-4. Copy `.env.example` to `.env.local` and fill in the `VITE_FIREBASE_*` values from the Firebase console (same fields as the `firebaseConfig` snippet).
+4. Create `.env.local` in the project root and set `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, and `VITE_FIREBASE_APP_ID` from the Firebase console (Web app config / `firebaseConfig` snippet). Optionally add `VITE_FIREBASE_MEASUREMENT_ID`, `VITE_PUBLIC_SITE_URL`, `VITE_FIRESTORE_MEMORY_INIT`, or `VITE_FIRESTORE_LONG_POLLING` as needed.
 
 5. Publish **Firestore rules** from this repo (`firestore.rules`) in the Firebase console (Firestore → Rules → Publish). The default “deny all” rules will block the app until you do.
 
